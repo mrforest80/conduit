@@ -487,6 +487,7 @@ COPY public.users (id, username, password, email, created_on, last_login, image,
 2	testuser2	$2a$10$Qo392XEiES.BKHo52.mYduWU.UY3XLpba8b5NyBdkd3Ph.kUM4xOm	testuser2@example.com	2020-05-14 20:03:56.025651	\N	https://static.productionready.io/images/smiley-cyrus.jpg	\N
 3	testuser3	$2a$10$Qo392XEiES.BKHo52.mYduWU.UY3XLpba8b5NyBdkd3Ph.kUM4xOm	testuser3@example.com	2020-05-14 20:03:56.025651	\N	https://static.productionready.io/images/smiley-cyrus.jpg	\N
 4	testuser4	$2a$10$Qo392XEiES.BKHo52.mYduWU.UY3XLpba8b5NyBdkd3Ph.kUM4xOm	testuser4@example.com	2020-05-14 20:03:56.025651	\N	https://static.productionready.io/images/smiley-cyrus.jpg	\N
+5	erdei.zoltan	$2a$10$3IIQ4QybnAUdJ4SK1LNan.29BQSe7bDmlrpl2SZfP2Jsq3GBnsE/e	erdei.zoltan@teszt.hu	2020-05-14 20:03:56.025651	\N	https://i.redd.it/wtc3gq9qhe041.jpg	\N
 \.
 
 

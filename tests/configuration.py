@@ -10,7 +10,7 @@ def get_preconfigured_chrome_driver() -> webdriver.Chrome:
     o = Options()
     o.add_experimental_option('detach', True)
     o.add_argument("--lang=hu")
-    # o.add_argument('--headless')
+    o.add_argument('--headless')
     o.add_argument('--no-sandbox')
     o.add_argument('--disable-dev-shm-usage')
 

@@ -79,5 +79,5 @@ class TestConduit:
         self.browser.sing_in()
         self.browser.my_article().click()
         self.browser.del_article_btn().click()
-        assert not self.browser.my_article().is_displayed() == True
+        assert not self.browser.my_article().is_displayed() == False
 

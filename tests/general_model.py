@@ -3,27 +3,27 @@ from datetime import datetime
 
 class GeneralPage:
 
-    def __init__(self, driver: webdriver.Chrome, url):
-        self.driver = driver
+    def __init__(self, browser: webdriver.Chrome, url):
+        self.browser = browser
         self.url = url
 
     def open(self):
-        self.driver.get(self.url)
-        # self.driver.maximize_window()
+        self.browser.get(self.url)
+        # self.browser.maximize_window()
 
     def close(self):
-        self.driver.close()
+        self.browser.close()
 
     def quit(self):
-        self.driver.quit()
+        self.browser.quit()
 
     def refresh(self):
-        self.driver.refresh()
+        self.browser.refresh()
 
     def save_screen(self, path):
-        filename = f'{self.driver.title}-{datetime.now().strftime("%Y-%m-%d-%H-%M-%S")}.png'
+        filename = f'{self.browser.title}-{datetime.now().strftime("%Y-%m-%d-%H-%M-%S")}.png'
         print(f'Screenshot attempt: {path}\\{filename}') # path\filename.png --> C:\screenshots\filename.png
-        if not self.driver.save_screenshot(f'{path}\\{filename}'):
+        if not self.browser.save_screenshot(f'{path}\\{filename}'):
             print('Screenshot failed.')
 
 

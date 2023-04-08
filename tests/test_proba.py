@@ -45,7 +45,6 @@ class TestConduit:
         self.browser.input_password().send_keys(testuser['password'])
         self.browser.sign_in_up_btn().click()
         assert self.browser.header_signin_btn().is_displayed() == True
-        # assert self.browser.registration_login_fail_text() == 'Login failed!'
 
     def test_signin_valid(self):
         self.browser.sing_in()
@@ -80,5 +79,5 @@ class TestConduit:
         self.browser.sing_in()
         self.browser.my_article().click()
         self.browser.del_article_btn().click()
-        assert not self.browser.my_article().is_displayed() == False
+        assert not self.browser.my_article().is_displayed() == True
 

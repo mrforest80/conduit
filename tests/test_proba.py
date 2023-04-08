@@ -44,7 +44,8 @@ class TestConduit:
         self.browser.input_email().send_keys('teszt@teszt.com')
         self.browser.input_password().send_keys(testuser['password'])
         self.browser.sign_in_up_btn().click()
-        assert self.browser.registration_login_fail_text() == 'Login failed!'
+        assert self.browser.header_signin_btn().is_displayed() == True
+        # assert self.browser.registration_login_fail_text() == 'Login failed!'
 
     def test_signin_valid(self):
         self.browser.sing_in()

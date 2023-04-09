@@ -122,5 +122,5 @@ class conduitPage(GeneralPage):
     def page_links(self) -> WebElement:
         return WebDriverWait(self.browser, 5).until(EC.presence_of_all_elements_located((By.XPATH, '//a[@class="page-link"]')))
 
-    def next_teszt(self) -> WebElement:
-        pass
+    # def next_teszt(self) -> WebElement:
+    #     pass

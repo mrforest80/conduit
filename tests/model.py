@@ -12,7 +12,7 @@ class conduitPage(GeneralPage):
         super().__init__(browser, url='http://localhost:1667/#/')
 
     # Sign in function
-    def sing_in(self) -> WebElement:
+    def sing_in(self):
         signin_btn = WebDriverWait(self.browser, 5).until(EC.presence_of_element_located((By.LINK_TEXT, "Sign in")))
         signin_btn.click()
         email = WebDriverWait(self.browser, 5).until(EC.presence_of_element_located((By.XPATH, '//input[@placeholder="Email"]')))
@@ -108,9 +108,16 @@ class conduitPage(GeneralPage):
     def del_article_btn(self) -> WebElement:
         return WebDriverWait(self.browser, 5).until(EC.presence_of_element_located((By.XPATH, '//i[@class="ion-trash-a"]')))
 
-    # my article elements
+    # article elements
     def my_article(self) -> WebElement:
         return WebDriverWait(self.browser, 5).until(EC.presence_of_element_located((By.XPATH, f'//h1[contains(text(), "{test_article["article"]}")]')))
 
     def my_article_paragraph(self) -> WebElement:
         return WebDriverWait(self.browser, 5).until(EC.presence_of_element_located((By.TAG_NAME, 'p')))
+
+    def all_article(self) -> WebElement:
+        return WebDriverWait(self.browser, 5).until(EC.presence_of_all_elements_located((By.XPATH, '//a[@class="preview-link"]/h1')))
+
+    # page link
+    def page_links(self) -> WebElement:
+        return WebDriverWait(self.browser, 5).until(EC.presence_of_all_elements_located((By.XPATH, '//a[@class="page-link"]')))

@@ -75,9 +75,27 @@ class TestConduit:
         self.browser.article_submit_btn().click()
         assert self.browser.my_article_paragraph().text == test_article['article_text_mod']
 
+    def test_all_page(self):
+        self.browser.sing_in()
+        pages = []
+        for link in self.browser.page_links():
+            link.click()
+            pages.append(link)
+
+        assert len(pages) == len(self.browser.page_links())
+
     def test_del_my_article(self):
         self.browser.sing_in()
+        articles = []
+        for link in self.browser.all_article():
+            articles.append(link.text)
         self.browser.my_article().click()
         self.browser.del_article_btn().click()
-        assert not self.browser.my_article().is_displayed() == True
+        self.browser.refresh()
+        self.browser.header_home_btn().click()
+        articles_after_del = []
+        for link in self.browser.all_article():
+            articles_after_del.append(link.text)
+        assert len(articles) == len(articles_after_del) + 1
+
 

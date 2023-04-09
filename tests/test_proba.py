@@ -98,4 +98,7 @@ class TestConduit:
             articles_after_del.append(link.text)
         assert len(articles) == len(articles_after_del) + 1
 
+    def test_next(self):
+        pass
+
 

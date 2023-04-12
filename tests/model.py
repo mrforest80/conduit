@@ -1,3 +1,5 @@
+
+
 from general_model import GeneralPage
 from selenium.webdriver import Chrome
 from selenium.webdriver.common.by import By
@@ -21,6 +23,8 @@ class conduitPage(GeneralPage):
         password.send_keys(testuser['password'])
         login_btn = WebDriverWait(self.browser, 5).until(EC.presence_of_element_located((By.XPATH, '//button[@class="btn btn-lg btn-primary pull-xs-right"]')))
         login_btn.click()
+
+
 
     # Header elements
     def header_home_btn(self) -> WebElement:
@@ -83,7 +87,7 @@ class conduitPage(GeneralPage):
     def footer_decline_btn(self) -> WebElement:
         return WebDriverWait(self.browser, 5).until(EC.presence_of_element_located((By.XPATH, '//button[@class="cookie__bar__buttons__button cookie__bar__buttons__button--decline"]')))
 
-    def get_cookies(self) -> WebElement:
+    def get_cookies(self):
         return self.browser.get_cookie("vue-cookie-accept-decline-cookie-policy-panel")
 
     # new article elements
@@ -115,12 +119,16 @@ class conduitPage(GeneralPage):
     def my_article_paragraph(self) -> WebElement:
         return WebDriverWait(self.browser, 5).until(EC.presence_of_element_located((By.TAG_NAME, 'p')))
 
-    def all_article(self) -> WebElement:
+    def all_article(self):
         return WebDriverWait(self.browser, 5).until(EC.presence_of_all_elements_located((By.XPATH, '//a[@class="preview-link"]/h1')))
 
     # page link
-    def page_links(self) -> WebElement:
+    def page_links(self):
         return WebDriverWait(self.browser, 5).until(EC.presence_of_all_elements_located((By.XPATH, '//a[@class="page-link"]')))
 
-    # def next_teszt(self) -> WebElement:
-    #     pass
+    # tag list
+    def side_bar_tag_list(self):
+        return WebDriverWait(self.browser, 5).until(EC.presence_of_all_elements_located((By.XPATH, '//div[@class="sidebar"]/div[@class="tag-list"]/a')))
+
+    def tag_list(self) -> WebElement:
+        return WebDriverWait(self.browser, 5).until(EC.presence_of_element_located((By.XPATH, f'//div[@class="feed-toggle"]/ul/li[3]/a')))

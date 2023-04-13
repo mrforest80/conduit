@@ -20,6 +20,9 @@ class GeneralPage:
     def refresh(self):
         self.browser.refresh()
 
+    def back(self):
+        self.browser.back()
+
     def save_screen(self, path):
         filename = f'{self.browser.title}-{datetime.now().strftime("%Y-%m-%d-%H-%M-%S")}.png'
         print(f'Screenshot attempt: {path}\\{filename}') # path\filename.png --> C:\screenshots\filename.png

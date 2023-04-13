@@ -14,7 +14,7 @@ class conduitPage(GeneralPage):
         super().__init__(browser, url='http://localhost:1667/#/')
 
     # Sign in function
-    def sing_in(self):
+    def sign_in(self):
         signin_btn = WebDriverWait(self.browser, 5).until(EC.presence_of_element_located((By.LINK_TEXT, "Sign in")))
         signin_btn.click()
         email = WebDriverWait(self.browser, 5).until(EC.presence_of_element_located((By.XPATH, '//input[@placeholder="Email"]')))
@@ -132,3 +132,16 @@ class conduitPage(GeneralPage):
 
     def tag_list(self) -> WebElement:
         return WebDriverWait(self.browser, 5).until(EC.presence_of_element_located((By.XPATH, f'//div[@class="feed-toggle"]/ul/li[3]/a')))
+
+    # TestUser1
+    def testuser1(self) -> WebElement:
+        return WebDriverWait(self.browser, 5).until(EC.presence_of_element_located((By.XPATH, '//a[contains(text(), "user1")]')))
+
+    def test_user_articles(self):
+        return WebDriverWait(self.browser, 5).until(EC.presence_of_all_elements_located((By.XPATH, '//span[contains(text(), "Read more")]')))
+
+    def article(self) -> WebElement:
+        return WebDriverWait(self.browser, 5).until(EC.presence_of_element_located((By.XPATH, '//div[@class="container"]/h1')))
+
+    def article_content(self):
+        return WebDriverWait(self.browser, 5).until(EC.presence_of_element_located((By.XPATH, '//div[@class="col-xs-12"]/div/p')))

@@ -1,7 +1,8 @@
 testuser = {
     "name": "TesztUser",
     "email": "teszt@teszt.hu",
-    "password": "Ez123456"
+    "password": "Ez123456",
+    "invalid_email": "teszt.teszt.com"
 }
 
 test_article = {

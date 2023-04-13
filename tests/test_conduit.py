@@ -167,20 +167,20 @@ class TestConduit:
     def test_save_datas(self):
         self.browser.sign_in()
         self.browser.testuser1().click()
-        time.sleep(0.3)
+        time.sleep(0.5)
         user1 = 0
         article_title = []
         article_content = []
         for article in self.browser.all_article():
-            time.sleep(0.3)
+            time.sleep(0.5)
             self.browser.test_user_articles()[user1].click()
-            time.sleep(0.3)
+            time.sleep(0.5)
             article_title.append(self.browser.article().text)
             article_content.append(self.browser.article_content().text)
-            time.sleep(0.3)
+            time.sleep(0.5)
             user1 += 1
             self.browser.back()
-            time.sleep(0.3)
+            time.sleep(0.5)
 
         with open('tests/saved_article.csv', 'w', encoding="utf8") as file:
             writer = csv.writer(file)

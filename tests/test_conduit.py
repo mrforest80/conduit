@@ -172,9 +172,9 @@ class TestConduit:
         article_title = []
         article_content = []
         for article in self.browser.all_article():
-            time.sleep(0.7)
+            time.sleep(1)
             self.browser.test_user_articles()[user1].click()
-            time.sleep(0.7)
+            time.sleep(1)
             article_title.append(self.browser.article().text)
             article_content.append(self.browser.article_content().text)
             time.sleep(0.5)
